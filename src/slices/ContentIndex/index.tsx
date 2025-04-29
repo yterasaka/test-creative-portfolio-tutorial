@@ -41,7 +41,7 @@ const ContentIndex: FC<ContentIndexProps> = async ({ slice }) => {
         items={items}
         contentType={contentType}
         viewMoreText={slice.primary.view_more_text}
-        falllbackItemImage={slice.primary.fallback_item_image}
+        fallbackItemImage={slice.primary.fallback_item_image}
       />
     </Bounded>
   );

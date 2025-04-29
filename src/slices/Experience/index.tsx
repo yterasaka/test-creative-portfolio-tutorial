@@ -1,3 +1,4 @@
+import React from "react";
 import Bounded from "@/app/components/Bounded";
 import Heading from "@/app/components/Heading";
 import { Content } from "@prismicio/client";
@@ -11,7 +12,7 @@ export type ExperienceProps = SliceComponentProps<Content.ExperienceSlice>;
 /**
  * Component for "Experience" Slices.
  */
-const Experience = ({ slice }: ExperienceProps): JSX.Element => {
+const Experience = ({ slice }: ExperienceProps) => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
