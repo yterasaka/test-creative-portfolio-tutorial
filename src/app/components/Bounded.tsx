@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 type BoundedProps = {
-  as?: React.ElementType;
+  as?: React.ElementType | string;
   className?: string;
   children: React.ReactNode;
 };
@@ -18,7 +18,7 @@ const Bounded = React.forwardRef<HTMLDivElement, BoundedProps>(
         <div className="mx-auto w-full max-w-7xl">{children}</div>
       </Comp>
     );
-  }
+  },
 );
 
 Bounded.displayName = "Bounded"; // `React.forwardRef()` を使用する場合は、デフォルトでは匿名の関数を返すため、`displayName` を設定する。
