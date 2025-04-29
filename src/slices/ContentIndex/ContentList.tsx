@@ -27,7 +27,7 @@ export default function ContentList({
   const [currentItem, setCurrentItem] = useState<null | number>(null);
 
   const lastMousePos = useRef({ x: 0, y: 0 });
-  const urlPrefix = contentType === "Blog" ? "/blog" : "/projects";
+  const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,7 +46,7 @@ export default function ContentList({
               end: "bottom center",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
       return () => ctx.revert();
@@ -119,7 +119,7 @@ export default function ContentList({
   return (
     <div ref={component}>
       <ul
-        className="grid border-b border-b-slate-100 "
+        className="grid border-b border-b-slate-100"
         onMouseLeave={onMouseLeave}
       >
         {items.map((item, index) => (
@@ -127,7 +127,7 @@ export default function ContentList({
             {isFilled.keyText(item.data.title) && (
               <li
                 key={index}
-                className="list-item opacity-0f"
+                className="list-item opacity-0"
                 onMouseEnter={() => onMouseEnter(index)}
                 ref={(el) => (itemsRef.current[index] = el)}
               >
@@ -140,7 +140,7 @@ export default function ContentList({
                     <span className="text-3xl font-bold">
                       {item.data.title}
                     </span>
-                    <div className="flex gap-3 text-yellow-400 text-lg font-bold">
+                    <div className="flex gap-3 text-lg font-bold text-yellow-400">
                       {item.tags.map((tag, index) => (
                         <span key={index}>{tag}</span>
                       ))}
@@ -158,7 +158,7 @@ export default function ContentList({
 
       {/* ホバーエフェクト */}
       <div
-        className="hover-reveal pointer-events-none absolute lef-o top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-over bg-center opacity-100 transition-[background] duration-300"
+        className="hover-reveal lef-o bg-over pointer-events-none absolute top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-center opacity-100 transition-[background] duration-300"
         style={{
           backgroundImage:
             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
