@@ -5,7 +5,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
-import { createClient, repositoryName } from "@/prismicio";
+import { repositoryName } from "@/prismicio";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist-sans",
